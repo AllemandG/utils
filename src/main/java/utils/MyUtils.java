@@ -49,7 +49,7 @@ public class MyUtils {
 			return Arrays.asList();
 		
 		return list.stream()
-				.filter(x -> x != null)
+				.filter(Objects::nonNull)
 				.map(x -> (float)((x.floatValue() * x.floatValue()) + 0.5) )
 				.collect(Collectors.toList());
 	}
