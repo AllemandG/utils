@@ -20,5 +20,6 @@ public class MyIpServiceTest {
 	@Test
 	public void testMyIpService() {
 		Assert.assertThat(ipService.getMyIp(), IsEqual.equalTo("92.154.66.22"));
+		Mockito.verify(httpDataMock).getJsonIp();
 	}
 }
