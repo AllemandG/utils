@@ -44,4 +44,13 @@ public class MyUtils {
 				.collect(Collectors.toList());
 	}
 	
+	public static List<Float> transformSquarePlusPointFive (List<Integer> list) {
+		if (list == null)
+			return Arrays.asList();
+		
+		return list.stream()
+				.filter(x -> x != null)
+				.map(x -> (float)((x.floatValue() * x.floatValue()) + 0.5) )
+				.collect(Collectors.toList());
+	}
 }

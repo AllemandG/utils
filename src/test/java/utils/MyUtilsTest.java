@@ -65,9 +65,9 @@ public class MyUtilsTest {
 	
 	@Test
 	public void testFilterEvenNumberNullItem () {
-		List<Integer> list = Arrays.asList(1, 2, null, 4);
+		List<Integer> list = Arrays.asList(1, 2, 3, null);
 		List<Integer> filtered = MyUtils.filterEvenNumber(list);
-		Assert.assertThat(filtered, IsEqual.equalTo(Arrays.asList(2, 4)));
+		Assert.assertThat(filtered, IsEqual.equalTo(Arrays.asList(2)));
 	}
 	
 	@Test
@@ -88,6 +88,34 @@ public class MyUtilsTest {
 	public void testFilterEvenNumberNoPairItem () {
 		List<Integer> list = Arrays.asList(1, 5, 3, 7);
 		List<Integer> filtered = MyUtils.filterEvenNumber(list);
+		Assert.assertThat(filtered, IsEqual.equalTo(Arrays.asList()));
+	}
+	
+	@Test
+	public void testTSPPFNormalList () {
+		List<Integer> list = Arrays.asList(1, 2, 3, 4);
+		List<Float> filtered = MyUtils.transformSquarePlusPointFive(list);
+		Assert.assertThat(filtered, IsEqual.equalTo(Arrays.asList(1.5f, 4.5f, 9.5f, 16.5f)));
+	}
+	
+	@Test
+	public void testTSPPFNullList () {
+		List<Integer> list = null;
+		List<Float> filtered = MyUtils.transformSquarePlusPointFive(list);
+		Assert.assertThat(filtered, IsEqual.equalTo(Arrays.asList()));
+	}
+	
+	@Test
+	public void testTSPPFNullItem () {
+		List<Integer> list = Arrays.asList(1, 2, null, 4);
+		List<Float> filtered = MyUtils.transformSquarePlusPointFive(list);
+		Assert.assertThat(filtered, IsEqual.equalTo(Arrays.asList(1.5f, 4.5f, 16.5f)));
+	}
+	
+	@Test
+	public void testTSPPFAllNullItem () {
+		List<Integer> list = Arrays.asList(null, null, null, null);
+		List<Float> filtered = MyUtils.transformSquarePlusPointFive(list);
 		Assert.assertThat(filtered, IsEqual.equalTo(Arrays.asList()));
 	}
 }
