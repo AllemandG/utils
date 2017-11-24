@@ -37,7 +37,7 @@ public class MyUtils {
 	
 	public static List<Integer> filterEvenNumber (List<Integer> list) {
 		if (list == null)
-			return null;
+			return Arrays.asList();
 		
 		return list.stream()
 				.filter(x -> (x != null) && ((x.intValue() % 2) == 0) )

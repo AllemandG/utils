@@ -74,7 +74,7 @@ public class MyUtilsTest {
 	public void testFilterEvenNumberNullList () {
 		List<Integer> list = null;
 		List<Integer> filtered = MyUtils.filterEvenNumber(list);
-		Assert.assertThat(filtered, IsNull.nullValue());
+		Assert.assertThat(filtered, IsEqual.equalTo(Arrays.asList()));
 	}
 	
 	@Test
