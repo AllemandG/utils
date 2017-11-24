@@ -7,8 +7,6 @@ public class Main {
 		
 		MyIpService ipService = new MyIpService(httpData);
 		
-		System.out.println(httpData.getJsonIp());
-		
 		System.out.println(ipService.getMyIp());
 	}
 }
