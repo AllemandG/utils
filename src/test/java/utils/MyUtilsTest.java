@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.hamcrest.core.Is;
+import org.hamcrest.core.IsNull;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -34,5 +35,23 @@ public class MyUtilsTest {
 		List<Integer> list = Arrays.asList();
 		int sum = MyUtils.sum(list);
 		Assert.assertThat(sum, Is.is(0));
+	}
+	
+	@Test
+	public void testEmptyToNull_NullValue () {
+		String str = MyUtils.emptyToNull(null);
+		Assert.assertThat(str, IsNull.nullValue());
+	}
+	
+	@Test
+	public void testEmptyToNullEmptyValue () {
+		String str = MyUtils.emptyToNull("");
+		Assert.assertThat(str, IsNull.nullValue());
+	}
+	
+	@Test
+	public void testEmptyToNullNotEmptyValue () {
+		String str = MyUtils.emptyToNull("str");
+		Assert.assertThat(str, IsNull.notNullValue());
 	}
 }

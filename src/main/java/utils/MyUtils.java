@@ -2,7 +2,11 @@ package utils;
 
 import java.util.*;
 
-public abstract class MyUtils {
+public class MyUtils {
+	
+	private MyUtils () {
+		
+	}
 	
 	public static int sum (List<Integer> liste) {
 		int somme = 0;
@@ -20,6 +24,14 @@ public abstract class MyUtils {
 		}
 		
 		return somme;
+	}
+	
+	public static String emptyToNull (String s) {
+		if (s == null || s.isEmpty()) {
+			return null;
+		}else {
+			return s;
+		}
 	}
 	
 	
