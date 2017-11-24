@@ -23,6 +23,8 @@ public class MyUtils {
 		}
 		return somme;
 		*/
+		if (liste == null)
+			return 0;
 		
 		return liste.stream()
 				.filter(Objects::nonNull)
